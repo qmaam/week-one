@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI CV Builder (English & Somali)</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- jsPDF & html2canvas CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1 class="center">AI CV Builder (English & Somali)</h1>
+
+    <div class="container">
+        <form id="cv-form">
+            <h2>Personal Information</h2>
+            <div class="grid-2">
+                <label>
+                    Full Name
+                    <input type="text" id="name" required />
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="email" required />
+                </label>
+                <label>
+                    Phone
+                    <input type="tel" id="phone" />
+                </label>
+                <label>
+                    Address
+                    <input type="text" id="address" />
+                </label>
+            </div>
+
+            <h2>Professional Summary</h2>
+            <label>
+                English
+                <textarea id="summary-en" rows="3"></textarea>
+            </label>
+            <label>
+                Somali
+                <textarea id="summary-so" rows="3"></textarea>
+            </label>
+
+            <h2>Education</h2>
+            <div id="education-wrapper"></div>
+            <button type="button" class="add-btn" onclick="addEducation()">Add Education</button>
+
+            <h2>Work Experience</h2>
+            <div id="experience-wrapper"></div>
+            <button type="button" class="add-btn" onclick="addExperience()">Add Experience</button>
+
+            <h2>Skills</h2>
+            <input type="text" id="skills" placeholder="e.g. Python, Project Management" />
+
+            <h2>Languages</h2>
+            <div id="language-wrapper"></div>
+            <button type="button" class="add-btn" onclick="addLanguage()">Add Language</button>
+
+            <h2>References</h2>
+            <div id="reference-wrapper"></div>
+            <button type="button" class="add-btn" onclick="addReference()">Add Reference</button>
+
+            <div class="center mt-20">
+                <button type="button" class="primary" onclick="generateCV()">Generate CV Preview</button>
+                <button type="button" class="download-btn" onclick="downloadPDF()">Download PDF</button>
+            </div>
+        </form>
+    </div>
+
+    <hr />
+
+    <div id="cv-preview" class="preview"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
